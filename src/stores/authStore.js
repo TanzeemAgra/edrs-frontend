@@ -25,7 +25,15 @@ const useAuthStore = create(
       // Login user
       login: async (credentials) => {
         try {
+          // Debug logging
+          console.log('🔍 AuthStore Login Debug:')
+          console.log('- Credentials:', credentials)
+          console.log('- API Base URL:', import.meta.env.VITE_API_URL || 'http://localhost:8001/api')
+          
           const response = await api.post('/auth/login/', credentials)
+          
+          console.log('✅ Login Response:', response.data)
+          
           const { user, token } = response.data
           
           set({ 
@@ -38,6 +46,9 @@ const useAuthStore = create(
           localStorage.setItem('token', token)
           return { success: true, user }
         } catch (error) {
+          console.error('❌ Login error:', error)
+          console.error('❌ Error response:', error.response)
+          
           return { 
             success: false, 
             error: error.response?.data?.message || 'Login failed' 
