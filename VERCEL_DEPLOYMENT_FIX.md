@@ -26,8 +26,8 @@ The error was caused by referencing non-existent Vercel secrets. I've simplified
    Click **"Environment Variables"** and add:
    
    ```bash
-   # Replace with your actual Railway backend URL
-   VITE_API_URL = https://your-backend.up.railway.app
+   # Railway backend URL
+   VITE_API_URL = https://edrs-backend-production.up.railway.app
    
    # Optional app configuration
    VITE_APP_NAME = EDRS
@@ -47,7 +47,7 @@ If you don't have your Railway URL:
 1. Go to [Railway Dashboard](https://railway.app/dashboard)
 2. Select your backend service
 3. Go to **"Settings"** tab
-4. Copy the **"Public Domain"** (e.g., `https://xyz.up.railway.app`)
+2. Copy the **"Public Domain"** (e.g., `https://edrs-backend-production.up.railway.app`)
 5. Use this URL in `VITE_API_URL` (without `/api` suffix)
 
 ### **3. Update Railway CORS Settings**
@@ -78,13 +78,13 @@ Add your Vercel domain to Railway backend:
 https://your-app.vercel.app
 
 # Backend API (Railway)  
-https://your-backend.up.railway.app/api/
+https://edrs-backend-production.up.railway.app/api/
 
 # Backend Health Check
-https://your-backend.up.railway.app/health/
+https://edrs-backend-production.up.railway.app/health/
 
 # API Documentation
-https://your-backend.up.railway.app/api/docs/
+https://edrs-backend-production.up.railway.app/api/docs/
 ```
 
 ## 🔧 **Alternative: Vercel CLI**
@@ -125,7 +125,7 @@ vercel --prod
 - Verify `package.json` scripts
 
 ### **API Connection Fails**
-- Test Railway backend health: `curl https://your-backend.up.railway.app/health/`
+# Test Railway backend health: `curl https://edrs-backend-production.up.railway.app/health/`
 - Check if Railway service is sleeping (first request may take 30s)
 
 ## 🎉 **Expected Result**

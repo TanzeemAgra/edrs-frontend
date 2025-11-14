@@ -13,7 +13,7 @@ const getApiConfig = () => {
   // API Base URLs
   const API_URLS = {
     development: import.meta.env.VITE_DEV_API_URL || 'http://localhost:8000',
-    production: import.meta.env.VITE_API_URL || 'https://your-backend.up.railway.app'
+    production: import.meta.env.VITE_API_URL || 'https://edrs-backend-production.up.railway.app'
   }
 
   const baseURL = isDevelopment ? API_URLS.development : API_URLS.production

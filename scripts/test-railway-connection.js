@@ -25,7 +25,7 @@ const getApiUrl = () => {
   // Check for production API URL first, then development
   return process.env.VITE_API_URL || 
          process.env.VITE_DEV_API_URL || 
-         'http://localhost:8000';
+         'https://edrs-backend-production.up.railway.app';
 };
 
 const runConnectionTests = async () => {

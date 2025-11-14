@@ -38,7 +38,7 @@ Your frontend has been optimized for Vercel deployment with intelligent Railway 
 
 First, get your Railway backend URL:
 1. Go to Railway Dashboard → Your Backend Service
-2. Copy the **"Public Domain"** URL (e.g., `https://xyz.up.railway.app`)
+2. Copy the **"Public Domain"** URL: `https://edrs-backend-production.up.railway.app`
 3. **Note**: Do NOT include `/api` in the base URL
 
 ### **Step 2: Deploy to Vercel**
@@ -62,8 +62,8 @@ First, get your Railway backend URL:
 3. **Configure Environment Variables**:
    In Vercel Dashboard → Project Settings → Environment Variables:
    ```bash
-   # REQUIRED: Railway Backend URL (Replace with your actual URL)
-   VITE_API_URL=https://your-backend.up.railway.app
+   # REQUIRED: Railway Backend URL
+   VITE_API_URL=https://edrs-backend-production.up.railway.app
    
    # APP CONFIGURATION
    VITE_APP_NAME=EDRS
@@ -168,7 +168,7 @@ export default defineConfig({
 // Smart environment detection
 const apiConfig = {
   development: 'http://localhost:8000',
-  production: 'https://your-backend.up.railway.app'
+  production: 'https://edrs-backend-production.up.railway.app'
 }
 
 // Retry logic for Railway cold starts
@@ -204,7 +204,7 @@ npm run preview
 curl https://your-app.vercel.app/api/health/
 
 # Check Railway backend directly
-curl https://your-backend.up.railway.app/health/
+curl https://edrs-backend-production.up.railway.app/health/
 ```
 
 ### **Common Issues & Solutions**
