@@ -76,12 +76,12 @@ const Footer = () => {
               © {currentYear} EDRS. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-primary-600 text-sm">
+              <Link to="/privacy-policy" className="text-gray-500 hover:text-primary-600 text-sm">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-500 hover:text-primary-600 text-sm">
+              </Link>
+              <Link to="/terms-of-service" className="text-gray-500 hover:text-primary-600 text-sm">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

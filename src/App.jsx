@@ -11,6 +11,9 @@ import PostDetail from './pages/Posts/PostDetail'
 import CreatePost from './pages/Posts/CreatePost'
 import Profile from './pages/Profile/Profile'
 import PIDAnalysisRoutes from './pages/PIDAnalysisRoutes'
+import PrivacyPolicy from './pages/Legal/PrivacyPolicy'
+import TermsOfService from './pages/Legal/TermsOfService'
+import LegalIndex from './pages/Legal/LegalIndex'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -31,6 +34,9 @@ function App() {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="legal" element={<LegalIndex />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="terms-of-service" element={<TermsOfService />} />
         
         {/* Protected routes */}
         <Route element={<ProtectedRoute />}>
