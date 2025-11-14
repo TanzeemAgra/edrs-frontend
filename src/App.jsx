@@ -10,6 +10,7 @@ import Posts from './pages/Posts/Posts'
 import PostDetail from './pages/Posts/PostDetail'
 import CreatePost from './pages/Posts/CreatePost'
 import Profile from './pages/Profile/Profile'
+import PIDAnalysisRoutes from './pages/PIDAnalysisRoutes'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="posts/:slug" element={<PostDetail />} />
           <Route path="posts/create" element={<CreatePost />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="pid-analysis/*" element={<PIDAnalysisRoutes />} />
         </Route>
         
         {/* 404 route */}

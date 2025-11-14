@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Home', href: '/', current: location.pathname === '/' },
     { name: 'Dashboard', href: '/dashboard', current: location.pathname === '/dashboard', auth: true },
     { name: 'Posts', href: '/posts', current: location.pathname.startsWith('/posts'), auth: true },
+    { name: 'P&ID Analysis', href: '/pid-analysis', current: location.pathname.startsWith('/pid-analysis'), auth: true },
   ]
 
   const handleLogout = async () => {
