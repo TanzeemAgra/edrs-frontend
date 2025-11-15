@@ -14,10 +14,10 @@ const Footer = () => {
                 <span className="text-xl font-bold text-primary-600">EDRS</span>
               </Link>
               <p className="text-gray-600 text-sm mb-4">
-                Electronic Document Recording System - A modern solution for document management and collaboration.
+                Enterprise-grade engineering document management and P&ID analysis platform. Delivering precision, compliance, and operational excellence for global industrial projects.
               </p>
               <p className="text-gray-500 text-xs">
-                Built with Django & React. Deployed on Railway & Vercel.
+                Empowering engineering excellence across oil & gas, petrochemicals, and industrial infrastructure sectors.
               </p>
             </div>
 
@@ -38,8 +38,8 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/posts" className="text-gray-600 hover:text-primary-600 text-sm">
-                    Posts
+                  <Link to="/pid-analysis" className="text-gray-600 hover:text-primary-600 text-sm">
+                    P&ID Analysis
                   </Link>
                 </li>
               </ul>
@@ -52,19 +52,19 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-gray-600 hover:text-primary-600 text-sm">
+                  <Link to="/contact-us" className="text-gray-600 hover:text-primary-600 text-sm">
                     Help Center
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-600 hover:text-primary-600 text-sm">
+                  <Link to="/contact-us" className="text-gray-600 hover:text-primary-600 text-sm">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-600 hover:text-primary-600 text-sm">
-                    API Documentation
-                  </a>
+                  <Link to="/contact-us" className="text-gray-600 hover:text-primary-600 text-sm">
+                    Enterprise Solutions
+                  </Link>
                 </li>
               </ul>
             </div>

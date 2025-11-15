@@ -1,6 +1,6 @@
 # EDRS Frontend
 
-React frontend application for the Electronic Document Recording System.
+Professional React frontend application for the Engineering Document Review System - delivering enterprise-grade user experience for industrial document management.
 
 ## 🏗️ Architecture
 

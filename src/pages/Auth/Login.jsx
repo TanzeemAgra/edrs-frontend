@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Sign In - EDRS</title>
+        <title>Professional Access | EDRS Engineering Platform</title>
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">

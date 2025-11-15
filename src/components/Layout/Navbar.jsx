@@ -17,9 +17,14 @@ const Navbar = () => {
 
   const navigation = [
     { name: 'Home', href: '/', current: location.pathname === '/' },
+    { name: 'Solutions', href: '/solutions', current: location.pathname === '/solutions' },
     { name: 'Dashboard', href: '/dashboard', current: location.pathname === '/dashboard', auth: true },
     { name: 'Posts', href: '/posts', current: location.pathname.startsWith('/posts'), auth: true },
     { name: 'P&ID Analysis', href: '/pid-analysis', current: location.pathname.startsWith('/pid-analysis'), auth: true },
+    { name: 'Industries', href: '/industries', current: location.pathname === '/industries' },
+    { name: 'Pricing', href: '/pricing', current: location.pathname === '/pricing' },
+    { name: 'Resources', href: '/resources', current: location.pathname === '/resources' },
+    { name: 'Contact Us', href: '/contact-us', current: location.pathname === '/contact-us' },
   ]
 
   const handleLogout = async () => {

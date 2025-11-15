@@ -38,32 +38,32 @@ api.interceptors.response.use(
 export const projectsAPI = {
   // Get all projects
   getProjects: (params = {}) => {
-    return api.get('/projects/', { params });
+    return api.get('/pid-analysis/projects/', { params });
   },
 
   // Get single project
   getProject: (projectId) => {
-    return api.get(`/projects/${projectId}/`);
+    return api.get(`/pid-analysis/projects/${projectId}/`);
   },
 
   // Create new project
   createProject: (projectData) => {
-    return api.post('/projects/', projectData);
+    return api.post('/pid-analysis/projects/', projectData);
   },
 
   // Update project
   updateProject: (projectId, projectData) => {
-    return api.put(`/projects/${projectId}/`, projectData);
+    return api.put(`/pid-analysis/projects/${projectId}/`, projectData);
   },
 
   // Delete project
   deleteProject: (projectId) => {
-    return api.delete(`/projects/${projectId}/`);
+    return api.delete(`/pid-analysis/projects/${projectId}/`);
   },
 
   // Get project statistics
   getProjectStats: (projectId) => {
-    return api.get(`/projects/${projectId}/stats/`);
+    return api.get(`/pid-analysis/projects/${projectId}/stats/`);
   },
 };
 
@@ -71,17 +71,17 @@ export const projectsAPI = {
 export const diagramsAPI = {
   // Get diagrams for a project
   getDiagrams: (projectId, params = {}) => {
-    return api.get(`/projects/${projectId}/diagrams/`, { params });
+    return api.get(`/pid-analysis/projects/${projectId}/diagrams/`, { params });
   },
 
   // Get single diagram
   getDiagram: (projectId, diagramId) => {
-    return api.get(`/projects/${projectId}/diagrams/${diagramId}/`);
+    return api.get(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/`);
   },
 
   // Upload new diagram
   uploadDiagram: (projectId, formData, onProgress) => {
-    return api.post(`/projects/${projectId}/diagrams/`, formData, {
+    return api.post(`/pid-analysis/projects/${projectId}/diagrams/`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -98,17 +98,17 @@ export const diagramsAPI = {
 
   // Update diagram
   updateDiagram: (projectId, diagramId, diagramData) => {
-    return api.put(`/projects/${projectId}/diagrams/${diagramId}/`, diagramData);
+    return api.put(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/`, diagramData);
   },
 
   // Delete diagram
   deleteDiagram: (projectId, diagramId) => {
-    return api.delete(`/projects/${projectId}/diagrams/${diagramId}/`);
+    return api.delete(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/`);
   },
 
   // Start analysis
   startAnalysis: (projectId, diagramId, analysisConfig = {}) => {
-    return api.post(`/projects/${projectId}/diagrams/${diagramId}/analyze/`, analysisConfig);
+    return api.post(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/analyze/`, analysisConfig);
   },
 };
 
@@ -116,27 +116,27 @@ export const diagramsAPI = {
 export const resultsAPI = {
   // Get analysis results
   getResults: (projectId, diagramId, params = {}) => {
-    return api.get(`/projects/${projectId}/diagrams/${diagramId}/results/`, { params });
+    return api.get(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/results/`, { params });
   },
 
   // Get single result
   getResult: (projectId, diagramId, resultId) => {
-    return api.get(`/projects/${projectId}/diagrams/${diagramId}/results/${resultId}/`);
+    return api.get(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/results/${resultId}/`);
   },
 
   // Update result (review, approve, etc.)
   updateResult: (projectId, diagramId, resultId, resultData) => {
-    return api.put(`/projects/${projectId}/diagrams/${diagramId}/results/${resultId}/`, resultData);
+    return api.put(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/results/${resultId}/`, resultData);
   },
 
   // Bulk update results
   bulkUpdateResults: (projectId, diagramId, updates) => {
-    return api.post(`/projects/${projectId}/diagrams/${diagramId}/results/bulk-update/`, updates);
+    return api.post(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/results/bulk-update/`, updates);
   },
 
   // Export results
   exportResults: (projectId, diagramId, format = 'pdf') => {
-    return api.get(`/projects/${projectId}/diagrams/${diagramId}/results/export/`, {
+    return api.get(`/pid-analysis/projects/${projectId}/diagrams/${diagramId}/results/export/`, {
       params: { format },
       responseType: 'blob',
     });
@@ -147,22 +147,22 @@ export const resultsAPI = {
 export const sessionsAPI = {
   // Get analysis sessions
   getSessions: (params = {}) => {
-    return api.get('/sessions/', { params });
+    return api.get('/pid-analysis/sessions/', { params });
   },
 
   // Get session details
   getSession: (sessionId) => {
-    return api.get(`/sessions/${sessionId}/`);
+    return api.get(`/pid-analysis/sessions/${sessionId}/`);
   },
 
   // Get session progress
   getSessionProgress: (sessionId) => {
-    return api.get(`/sessions/${sessionId}/progress/`);
+    return api.get(`/pid-analysis/sessions/${sessionId}/progress/`);
   },
 
   // Cancel session
   cancelSession: (sessionId) => {
-    return api.post(`/sessions/${sessionId}/cancel/`);
+    return api.post(`/pid-analysis/sessions/${sessionId}/cancel/`);
   },
 };
 
@@ -170,12 +170,12 @@ export const sessionsAPI = {
 export const categoriesAPI = {
   // Get error categories
   getCategories: () => {
-    return api.get('/error-categories/');
+    return api.get('/pid-analysis/error-categories/');
   },
 
   // Create custom category
   createCategory: (categoryData) => {
-    return api.post('/error-categories/', categoryData);
+    return api.post('/pid-analysis/error-categories/', categoryData);
   },
 };
 

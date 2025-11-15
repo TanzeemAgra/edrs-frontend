@@ -11,9 +11,11 @@ import PostDetail from './pages/Posts/PostDetail'
 import CreatePost from './pages/Posts/CreatePost'
 import Profile from './pages/Profile/Profile'
 import PIDAnalysisRoutes from './pages/PIDAnalysisRoutes'
+import DocumentLibrary from './components/DocumentLibrary/DocumentLibrary'
 import PrivacyPolicy from './pages/Legal/PrivacyPolicy'
 import TermsOfService from './pages/Legal/TermsOfService'
 import LegalIndex from './pages/Legal/LegalIndex'
+import ContactUs from './pages/ContactUs'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -37,10 +39,12 @@ function App() {
         <Route path="legal" element={<LegalIndex />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="terms-of-service" element={<TermsOfService />} />
+        <Route path="contact-us" element={<ContactUs />} />
         
         {/* Protected routes */}
         <Route element={<ProtectedRoute />}>
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="document-library" element={<DocumentLibrary />} />
           <Route path="posts" element={<Posts />} />
           <Route path="posts/:slug" element={<PostDetail />} />
           <Route path="posts/create" element={<CreatePost />} />

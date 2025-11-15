@@ -1,7 +1,7 @@
 {
   "name": "edrs-frontend",
   "version": "1.0.0",
-  "description": "EDRS React Frontend",
+  "description": "EDRS Engineering Document Management Platform - Professional React Frontend",
   "private": true,
   "scripts": {
     "dev": "vite",

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { useNavigate } from 'react-router-dom'
+import DocumentUploadModal from '../../components/upload/DocumentUploadModal'
 import { useAuthStore } from '../../stores/authStore'
 import { useDashboardStore } from '../../stores/dashboardStore'
 import DASHBOARD_CONFIG from '../../config/dashboard'
@@ -24,6 +26,7 @@ import {
 } from '@heroicons/react/24/outline'
 
 const Dashboard = () => {
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false)
   const navigate = useNavigate()
   const { user } = useAuthStore()
   const {
@@ -77,7 +80,7 @@ const Dashboard = () => {
   return (
     <>
       <Helmet>
-        <title>EDRS Dashboard - Electronic Document Review System</title>
+        <title>EDRS Dashboard | Engineering Document Management Platform</title>
         <meta name="description" content="Advanced dashboard for P&ID analysis and document management" />
       </Helmet>
 
@@ -375,7 +378,9 @@ const Dashboard = () => {
               
               <div className="space-y-3">
                 {/* Upload Document Action */}
-                <button className={`w-full flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 hover:scale-[1.02] ${
+                <button 
+                  onClick={() => setIsUploadModalOpen(true)}
+                  className={`w-full flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 hover:scale-[1.02] ${
                   isDarkMode 
                     ? 'bg-gradient-to-r from-blue-600/20 to-indigo-600/20 hover:from-blue-600/30 hover:to-indigo-600/30 border border-blue-500/20' 
                     : 'bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border border-blue-200'
@@ -390,6 +395,27 @@ const Dashboard = () => {
                     <p className={`text-sm ${
                       isDarkMode ? 'text-gray-400' : 'text-gray-600'
                     }`}>Add new P&ID for analysis</p>
+                  </div>
+                </button>
+
+                {/* Document Library Action */}
+                <button 
+                  onClick={() => navigate('/document-library')}
+                  className={`w-full flex items-center space-x-4 p-4 rounded-xl transition-all duration-200 hover:scale-[1.02] ${
+                  isDarkMode 
+                    ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-600/30 hover:to-pink-600/30 border border-purple-500/20' 
+                    : 'bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 border border-purple-200'
+                }`}>
+                  <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg">
+                    <DocumentTextIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 text-left">
+                    <p className={`font-medium ${
+                      isDarkMode ? 'text-white' : 'text-gray-900'
+                    }`}>Document Library</p>
+                    <p className={`text-sm ${
+                      isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                    }`}>Access your engineering docs</p>
                   </div>
                 </button>
 
@@ -661,6 +687,18 @@ const Dashboard = () => {
           </section>
         </main>
       </div>
+
+      {/* Document Upload Modal */}
+      <DocumentUploadModal 
+        isOpen={isUploadModalOpen}
+        onClose={() => setIsUploadModalOpen(false)}
+        onUploadSuccess={(project, fileCount) => {
+          // Refresh dashboard data after successful upload
+          fetchDashboardData()
+          // Optional: Show success message
+          console.log(`Successfully uploaded ${fileCount} files to project: ${project.name}`)
+        }}
+      />
     </>
   )
 }
